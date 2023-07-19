@@ -1,0 +1,13 @@
+
+<app-navbar></app-navbar>
+
+<div class="container-fluid d-flex justify-content-center" id="main">
+    <div class="row d-flex justify-content-around" style="width: 80%;">
+      <form [formGroup]="registrationForm" (ngSubmit)="register()">
+        <input type="text" formControlName="fullName" placeholder="FullName">
+        <input type="email" formControlName="email" placeholder="Email">
+        <input type="password" formControlName="password" placeholder="Password">
+        <button type="submit">Register</button>
+      </form>
+    </div>
+</div>

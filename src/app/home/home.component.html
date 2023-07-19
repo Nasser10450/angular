@@ -1,0 +1,33 @@
+
+<app-navbar></app-navbar>
+
+<div class="container-fluid m-2 d-flex justify-content-center">
+  <div class="row d-flex justify-content-center col-lg-12 col-md-12 col-sm-12">
+    <div class="container-fluid text-center w-75 col-10">
+      <h2>Marketplace</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, nulla. Delectus possimus atque explicabo aut tenetur quidem, minus at assumenda aliquid maxime asperiores facilis quibusdam. Quos adipisci aperiam laboriosam ex.</p>
+    </div>
+    <div class="card m-3 col-lg-3 col-md-4 col-sm-5" style="width: 24rem;" *ngFor="let product of products">
+      <img [src]="product.image" class="card-img-top" alt="..." width="320" height="250" [routerLink]="['/product', product.id]">
+      <hr>
+      <div class="card-body">
+        <h4 class="card-title text-center">{{ product.title }}</h4>
+        <h4 class="text-center">{{ product.category }}</h4>
+        <h2 class="text-center">{{ product.id }} | {{ product.price }}</h2>
+        <div class="clearfix col-12">
+          <div class="m-2 btn btn-primary col-4" type="button" id="cart" (click)="addToCart(product)">
+            <img src="assets/shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+            <label>Add to Cart</label>
+          </div>
+          <div class="m-2 btn btn-primary col-4" type="button" id="show" [routerLink]="['/product', product.id]">
+            <img src="assets/visibility_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+            <label>Prodocu Show</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+

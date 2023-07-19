@@ -1,0 +1,12 @@
+
+<app-navbar></app-navbar>
+
+<div class="container-fluid d-flex justify-content-center" id="main">
+    <div class="row d-flex justify-content-around" style="width: 80%;">
+        <form *ngIf="registrationData">
+            <input type="email" formControlName="email" placeholder="Email">
+            <input type="password" formControlName="password" placeholder="Password">
+            <button type="submit" (click)="goToHome()">Login</button>
+        </form>
+    </div>
+</div>
